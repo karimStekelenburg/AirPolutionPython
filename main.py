@@ -1,7 +1,4 @@
 import serial
-import time
-import array
-from threading import Thread
 
 class Serializer(Thread):
     def __init__(self, port, baut, timeout):
@@ -14,13 +11,7 @@ class Serializer(Thread):
 
 
     def sendPositions(self, flPos, fmPos, frPos, mlPos, mmPos, mrPos, blPos, bmPos, brPos):
-        # arr = [flPos, fmPos, frPos, mlPos, mmPos, mrPos, blPos, bmPos, brPos]
-        #
-        # for val in arr:
-        #     if val < 9
-
-
-        command = 'POS' + ':' + str(flPos) + ',' + str(fmPos) + ',' + str(frPos) + ',' + str(mlPos) + ',' + str(mmPos) + ',' + str(mrPos) + ',' + str(blPos) + ',' + str(bmPos) + ',' + str(brPos)
+        command = 'POS'+ str(flPos) + str(fmPos) + str(frPos) + str(mlPos) + str(mmPos) + str(mrPos) + str(blPos) + str(bmPos)
         self.serial.write(command.encode('utf-8'))
 
     def moveSingleStepper(self, stepperId, direction, steps):
