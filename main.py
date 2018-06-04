@@ -14,10 +14,10 @@ class Serializer(Thread):
 
 
     def sendPositions(self, flPos, fmPos, frPos, mlPos, mmPos, mrPos, blPos, bmPos, brPos):
-        arr = [flPos, fmPos, frPos, mlPos, mmPos, mrPos, blPos, bmPos, brPos]
-
-        for val in arr:
-            if val < 9
+        # arr = [flPos, fmPos, frPos, mlPos, mmPos, mrPos, blPos, bmPos, brPos]
+        #
+        # for val in arr:
+        #     if val < 9
 
 
         command = 'POS' + ':' + str(flPos) + ',' + str(fmPos) + ',' + str(frPos) + ',' + str(mlPos) + ',' + str(mmPos) + ',' + str(mrPos) + ',' + str(blPos) + ',' + str(bmPos) + ',' + str(brPos)
