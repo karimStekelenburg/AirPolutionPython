@@ -1,6 +1,6 @@
 import serial
 
-class Serializer(Thread):
+class Serializer():
     def __init__(self, port, baut, timeout):
         self.serial = serial.Serial(port, baut, timeout=timeout)
         self.start_char = 'S'
@@ -22,6 +22,9 @@ class Serializer(Thread):
         command = "CAL";
         self.serial.write(command)
 
+    def stop(self):
+        command = "STP";
+        self.serial.write(command)
 
 
 if __name__ == '__main__':
